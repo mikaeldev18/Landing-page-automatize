@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSA Pisos Vinílicos - Instalação com Excelência</title>
+    <meta name="description" content="Pisos vinílicos de qualidade instalados com excelência. Balneário Camboriú, Itajaí e região.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #8B6F47;
+            --primary-dark: #6B5835;
+            --primary-light: #A68968;
+            --text-dark: #2C2C2C;
+            --text-light: #6B6B6B;
+            --bg-light: #FAFAF8;
+            --white: #FFFFFF;
+            --accent: #C9A961;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* SEÇÃO SERVIÇOS */
+        .services {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* SEÇÃO PROCESSOS */
+        .processes {
+            padding: 5rem 0;
+        }
+
+        .processes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-card {
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .process-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .process-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* SEÇÃO CARACTERÍSTICAS */
+        .features {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* SEÇÃO PRAZOS */
+        .timeline {
+            padding: 5rem 0;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .timeline-item {
+            background: linear-gradient(135deg, rgba(139, 111, 71, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            position: relative;
+        }
+
+        .timeline-item h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-time {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* SEÇÃO BENEFÍCIOS */
+        .benefits {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .benefits .section-title {
+            color: var(--white);
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-item p {
+            font-size: 1rem;
+        }
+
+        /* SEÇÃO CLIENTES */
+        .clients {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .client-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .client-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(139, 111, 71, 0.2);
+        }
+
+        .client-icon {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .client-card h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        /* CTA SECTION */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-large {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn-large:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            color: #CCC;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: #CCC;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .services-grid,
+            .processes-grid,
+            .features-grid,
+            .timeline-grid,
+            .benefits-list,
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 4rem 0;
+            }
+
+            .services,
+            .processes,
+            .features,
+            .timeline,
+            .benefits,
+            .clients,
+            .cta {
+                padding: 3rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .btn-primary,
+            .btn-large {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .cta h2 {
+                font-size: 1.3rem;
+            }
+
+            .cta p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">🏢</div>
+                    <span>CSA Pisos</span>
+                </a>
+                <nav>
+                    <a href="#services">Serviços</a>
+                    <a href="#processes">Processos</a>
+                    <a href="#benefits">Benefícios</a>
+                    <a href="#contact">Contato</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5547996225114&text=Olá,+Vim+pelo+Google+e+gostaria+de+mais+informações+sobre+seus+serviços&type=phone_number&app_absent=0" class="btn-whatsapp" target="_blank">
+                        📱 WhatsApp
+                    </a>
+                </nav>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Pisos Vinílicos com Excelência</h1>
+                <p>Instalação profissional em Balneário Camboriú, Itajaí e região. Mais de 9 anos transformando espaços com qualidade e garantia.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5547996225114&text=Olá,+Vim+pelo+Google+e+gostaria+de+mais+informações+sobre+seus+serviços&type=phone_number&app_absent=0" class="btn-primary" target="_blank">
+                    Solicite um Orçamento
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Soluções completas em pisos vinílicos com acabamento perfeito</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧹</div>
+                    <h3>Limpeza e Preparação</h3>
+                    <p>Limpeza completa do local, lixação e remoção de obstáculos para uma superfície perfeita.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Autonivelante</h3>
+                    <p>Aplicação profissional de autonivelante para garantir uma superfície uniforme e perfeita.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Instalação Profissional</h3>
+                    <p>Técnica correta de instalação com adesivo de qualidade para acabamento impecável.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Proteção e Garantia</h3>
+                    <p>Proteção térmica incluída e garantia total sobre nossos trabalhos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESSOS -->
+    <section class="processes" id="processes">
+        <div class="container">
+            <h2 class="section-title">Nosso Processo de Trabalho</h2>
+            <p class="section-subtitle">4 etapas executadas com precisão nos mínimos detalhes</p>
+
+            <div class="processes-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h3>Limpeza</h3>
+                    <p>Limpeza do local de colagem e lixação para remover impurezas e pó.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h3>Autonivelante</h3>
+                    <p>Aplicação de autonivelante para garantir uma superfície uniforme antes da instalação.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h3>Instalação</h3>
+                    <p>Técnica correta com adesivo de qualidade para um acabamento perfeito.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <h3>Finalização</h3>
+                    <p>Proteção e acabamento final para um resultado impecável e duradouro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Por Que Escolher CSA?</h2>
+            <p class="section-subtitle">Pisos com as melhores características do mercado</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">💪</div>
+                    <h4>Resistente</h4>
+                    <p>Pisos duráveis e resistentes ao desgaste do dia a dia.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Rápida</h4>
+                    <p>Instalação ágil sem comprometer a qualidade do trabalho.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <h4>Prática</h4>
+                    <p>Fácil limpeza e manutenção para seu dia a dia.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <h4>Durável</h4>
+                    <p>Pisos que mantêm a beleza por anos com cuidados simples.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h4>Moderna</h4>
+                    <p>Designs contemporâneos que se adaptam a qualquer espaço.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Com Garantia</h4>
+                    <p>520+ clientes satisfeitos e garantia em todos os trabalhos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRAZOS -->
+    <section class="timeline" id="timeline">
+        <div class="container">
+            <h2 class="section-title">Prazos de Entrega</h2>
+            <p class="section-subtitle">Projetos concluídos dentro do prazo com qualidade garantida</p>
+
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <h3>Apartamento</h3>
+                    <p>55m² de piso vinílico instalado com acabamento perfeito</p>
+                    <span class="timeline-time">Finalização: 5 dias</span>
+                </div>
+                <div class="timeline-item">
+                    <h3>Prédio Comercial</h3>
+                    <p>250m² de área com instalação profissional e coordenação completa</p>
+                    <span class="timeline-time">Finalização: 12 dias</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefícios do Projeto</h2>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✅</div>
+                    <p><strong>Cumprimento de Prazos</strong> - Entrega pontual sempre</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💎</div>
+                    <p><strong>Valorização do Imóvel</strong> - Pisos de qualidade agregam valor</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">😊</div>
+                    <p><strong>Satisfação Total</strong> - 520+ clientes satisfeitos</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💳</div>
+                    <p><strong>Pagamento Facilitado</strong> - Parcelamento disponível</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <p><strong>Garantia Completa</strong> - Proteção total do seu investimento</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <p><strong>Equipe Experiente</strong> - Mais de 9 anos no mercado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="clients" id="clients">
+        <div class="container">
+            <h2 class="section-title">Clientes que Confiamos</h2>
+            <p class="section-subtitle">Atendemos projetos residenciais, comerciais e profissionais</p>
+
+            <div class="clients-grid">
+                <div class="client-card">
+                    <div class="client-icon">🏠</div>
+                    <h4>Projetos Residenciais</h4>
+                    <p>Apartamentos, casas e condomínios com acabamento de excelência</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">🏢</div>
+                    <h4>Construtoras</h4>
+                    <p>Parceria com construtoras para projetos de grande porte</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">📋</div>
+                    <h4>Incorporadoras</h4>
+                    <p>Soluções personalizadas para empreendimentos imobiliários</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">🏗️</div>
+                    <h4>Arquitetos</h4>
+                    <p>Executamos projetos de arquitetos com precisão técnica</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon">📐</div>
+                    <h4>Engenheiros</h4>
+                    <p>Cooperação com profissionais de engenharia civil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Pronto para um Upgrade?</h2>
+            <p>Transforme seu espaço com pisos vinílicos de qualidade</p>
+            <a href="https://api.whatsapp.com/send/?phone=5547996225114&text=Olá,+Vim+pelo+Google+e+gostaria+de+mais+informações+sobre+seus+serviços&type=phone_number&app_absent=0" class="btn-large" target="_blank">
+                Fale com a Equipe CSA via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CSA Pisos Vinílicos</h4>
+                    <p>Instalação profissional de pisos vinílicos com excelência desde 2015.</p>
+                    <p>Atendemos Balneário Camboriú, Itajaí, Navegantes e região.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <a href="#services">Serviços</a>
+                    <a href="#processes">Processos</a>
+                    <a href="#benefits">Benefícios</a>
+                    <a href="#contact">Contato</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>📱 <a href="https://api.whatsapp.com/send/?phone=5547996225114&text=Olá,+Vim+pelo+Google+e+gostaria+de+mais+informações+sobre+seus+serviços&type=phone_number&app_absent=0" target="_blank">(47) 99622-5114</a></p>
+                    <p>📧 <a href="mailto:csapisosvinilicos@gmail.com.br">csapisosvinilicos@gmail.com.br</a></p>
+                    <p>📍 Balneário Camboriú, Itajaí e região</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/csavinilicos/" target="_blank" title="Instagram">📷</a>
+                        <a href="https://api.whatsapp.com/send/?phone=5547996225114&text=Olá,+Vim+pelo+Google+e+gostaria+de+mais+informações+sobre+seus+serviços&type=phone_number&app_absent=0" target="_blank" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CSA Pisos Vinílicos. Todos os direitos reservados. | Desenvolvido com ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle responsivo
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
